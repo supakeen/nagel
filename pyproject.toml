@@ -1,0 +1,54 @@
+[tool.poetry]
+name = "nagel"
+version = "0.0.0"
+description = "Straightforward pastebin software."
+authors = ["supakeen <cmdr@supakeen.com>"]
+license = "MIT"
+readme = "README.rst"
+keywords = ["pastebin"]
+repository = "https://github.com/supakeen/nagel"
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.6,<4"
+requests = "^2.23.0"
+tornado = "^6.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+coverage = "^4.5"
+black = { version = "*", allow-prereleases = true }
+pytest-cov = "^2.8"
+pre-commit = "^1.20"
+flake8 = "^3.7"
+mypy = "^0.740.0"
+poetry-dynamic-versioning = "^0.3.0"
+
+[tool.poetry-dynamic-versioning]
+enable = true
+
+[tool.black]
+line-length = 80
+target_version = ["py36"]
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.eggs
+  | \.mypy_cache
+  | \.tox
+  | venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+[build-system]
+requires = ["setuptools", "wheel"]
+
